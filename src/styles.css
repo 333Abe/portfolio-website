@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("../public/fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+
+/* CSS HSL */
+:root {
+  --khaki: hsla(44, 11%, 60%, 1);
+  --ice-blue: hsla(180, 89%, 78%, 1);
+  --fire-brick: hsla(352, 90%, 39%, 1);
+  --eerie-black: hsla(210, 3%, 15%, 1);
+  --space-cadet: hsla(238, 44%, 16%, 1);
+}
+/*
+khaki:          #a49e8e
+ice-blue:       #95f9f9
+fire-brick:     #bd0a22
+eerie-black:    #252627
+space-cadet:    #17183b
+*/
+
+body {
+  background-color: var(--eerie-black);
+  margin: 0px;
+}
+
+#navbar {
+  display: flex block;
+  height: 100vh;
+  align-items: center;
+}
+
+#logo {
+  margin-left: clamp(4rem, 20vw, 48rem);
+  position: relative;
+  z-index: 2;
+}
+
+.navbar-link {
+  color: var(--khaki);
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-family: "Raleway", sans-serif;
+  display: block;
+  text-decoration: none;
+  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+}
+
+#navbar-links {
+  margin-left: clamp(4rem, 20vw, 48rem);
+  position: relative;
+  z-index: 2;
+}
+
+#navbar-links:hover > .navbar-link {
+  opacity: 0.3;
+}
+
+#navbar-links:hover > .navbar-link:hover {
+  opacity: 1;
+}
+
+#navbar-background-pattern {
+  height: 50vh;
+  width: 50vh;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  opacity: 0.2;
+
+  transition: opacity 800ms ease, height 800ms ease, weight 800ms ease;
+}
+
+#navbar-links:hover ~ #navbar-background-pattern {
+  height: 40vh;
+  width: 40vh;
+  opacity: 0.1;
+}
