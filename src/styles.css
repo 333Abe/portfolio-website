@@ -18,37 +18,89 @@ fire-brick:     #bd0a22
 eerie-black:    #252627
 space-cadet:    #17183b
 */
+/* * {
+  border: 1px solid red !important;
+} */
 
 body {
   background-color: var(--eerie-black);
   margin: 0px;
 }
 
+.App {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+#nav-container {
+  width: 200px;
+  height: auto;
+  background-color: rgb(56, 57, 58);
+  border: 2px solid var(--fire-brick);
+}
+
+main {
+  /* flex: 1; */
+  /* margin-left: 202px; */
+  padding: 20px;
+  color: var(--khaki);
+  font-family: "Raleway", sans-serif;
+  width: clamp(20rem, 50%, 55rem);
+}
+
 #navbar {
-  display: flex block;
-  height: 100vh;
+  /* border: 1px solid blue; */
+  /* position: fixed; */
+  display: flex;
+  height: 100%;
+  width: 200px;
   align-items: center;
+  /* justify-content: center;  */
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 #logo {
-  margin-left: clamp(4rem, 20vw, 48rem);
+  height: 2vh;
+  width: 2vh;
+  margin: 50px auto 50px;
   position: relative;
   z-index: 2;
+  background-image: url("../public/images/Seed-of-Life.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: whitesmoke;
+  padding: 2rem;
+  border-radius: 30px;
+  display: block;
+  border: 2px solid var(--eerie-black);
+}
+
+#outer-logo {
+  background-color: var(--ice-blue);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--fire-brick);
 }
 
 .navbar-link {
   color: var(--khaki);
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: 2rem;
   font-family: "Raleway", sans-serif;
   display: block;
   text-decoration: none;
-  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+  padding: 0.25rem;
+  margin-left: 40px;
 }
 
 #navbar-links {
-  margin-left: clamp(4rem, 20vw, 48rem);
+  /* margin-left: 4rem; */
   position: relative;
   z-index: 2;
+  width: 100%;
+  margin-top: 100px;
 }
 
 #navbar-links:hover > .navbar-link {
@@ -60,19 +112,61 @@ body {
 }
 
 #navbar-background-pattern {
-  height: 50vh;
-  width: 50vh;
+  background-image: url("../public/images/Seed-of-Life.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 100vh;
+  width: 200px;
   position: absolute;
-  left: 0px;
-  top: 0px;
+  /* left: 0px;
+  top: 0px; */
   z-index: 1;
   opacity: 0.2;
 
-  transition: opacity 800ms ease, height 800ms ease, weight 800ms ease;
+  transition: all 0.5s ease-in-out;
 }
 
 #navbar-links:hover ~ #navbar-background-pattern {
-  height: 40vh;
-  width: 40vh;
-  opacity: 0.1;
+  height: 100vh;
+  width: 150px;
+  opacity: 0.6;
+}
+
+#homeButtons {
+  display: flex;
+}
+
+.button {
+  height: 1rem;
+  width: 5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--fire-brick);
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  margin: 0.25rem;
+  transition: all 1.5s ease-out;
+}
+
+.button:hover {
+  background-color: var(--ice-blue);
+  border-radius: 15px;
+}
+
+.homeLink {
+  text-decoration: none;
+  color: var(--khaki);
+}
+
+.homeLink:hover {
+  color: black;
+}
+
+
+
+
+@media (max-width: 768px) {
+  
 }

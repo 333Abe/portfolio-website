@@ -1,32 +1,59 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [rotationAngle, setRotationAngle] = useState(0);
+
+  const handleLinkHover = (e) => {
+    const angle = e.target.dataset.rotationAngle;
+    if (angle) {
+      setRotationAngle(angle);
+    }
+  };
+
   return (
-    <nav id="navbar">
-      <Link to={`/`}>
-        <img src="./images/AB-logo.png" alt="logo" id="logo" />
-      </Link>
-      <div id="navbar-links">
-        <Link to={`/about`} className="navbar-link">
-          about
-        </Link>
-        <Link to={`/contact`} className="navbar-link">
-          contact
-        </Link>
-        <Link to={`/cv`} className="navbar-link">
-          cv
-        </Link>
-        <Link to={`/projects`} className="navbar-link">
-          projects
-        </Link>
+    <div id="nav-container">
+      <div id="outer-logo">
+        <Link to={`/`} id="logo"></Link>
       </div>
-      <img
-        id="navbar-background-pattern"
-        src="./images/Seed-of-Life.svg"
-        alt="background image"
-      />
-    </nav>
+
+      <nav id="navbar">
+        <div id="navbar-links" onMouseOver={handleLinkHover}>
+          <Link
+            to={`/about`}
+            className="navbar-link"
+            data-rotation-angle="90"
+          >
+            about
+          </Link>
+          <Link
+            to={`/cv`}
+            className="navbar-link"
+            data-rotation-angle="180"
+          >
+            cv
+          </Link>
+          <Link
+            to={`/contact`}
+            className="navbar-link"
+            data-rotation-angle="360"
+          >
+            contact
+          </Link>
+          <Link
+            to={`/projects`}
+            className="navbar-link"
+            data-rotation-angle="450"
+          >
+            projects
+          </Link>
+        </div>
+        <div
+          id="navbar-background-pattern"
+          style={{ transform: `rotate(${rotationAngle}deg)` }}
+        ></div>
+      </nav>
+    </div>
   );
 };
 
